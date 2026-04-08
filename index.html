@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ilya Krutov — Резюме</title>
+  <title>Ilya Krutov — Resume</title>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -34,10 +34,10 @@
       -webkit-text-fill-color: transparent;
     }
 
-    header p { margin-top: 15px; opacity: 0.7; font-size: 1.2rem; }
+    header p { margin-top: 15px; opacity: 0.8; font-size: 1.1rem; }
 
     section {
-      padding: 80px 20px;
+      padding: 70px 20px;
       max-width: 1100px;
       margin: auto;
       opacity: 0;
@@ -47,48 +47,33 @@
 
     section.visible { opacity: 1; transform: translateY(0); }
 
-    h2 { margin-bottom: 30px; font-size: 2rem; color: #c084fc; }
+    h2 { margin-bottom: 25px; font-size: 1.8rem; color: #c084fc; }
 
-    .about { line-height: 1.7; opacity: 0.85; }
+    .about { line-height: 1.6; opacity: 0.9; }
 
-    .projects {
+    .projects, .skills {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(192,132,252,0.2);
-      border-radius: 20px;
-      padding: 20px;
-      backdrop-filter: blur(12px);
-      transition: 0.4s;
-    }
-
-    .card:hover {
-      transform: translateY(-12px) scale(1.03);
-      border-color: #c084fc;
-      box-shadow: 0 0 30px rgba(192,132,252,0.4);
-    }
-
-    .card h3 { margin-bottom: 10px; }
-    .card p { opacity: 0.75; font-size: 0.95rem; }
-
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
 
-    .skill {
+    .card, .skill {
       background: rgba(255,255,255,0.05);
-      padding: 15px;
-      border-radius: 15px;
       border: 1px solid rgba(192,132,252,0.2);
+      border-radius: 18px;
+      padding: 18px;
+      backdrop-filter: blur(10px);
     }
 
-    footer { text-align: center; padding: 50px; opacity: 0.5; }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(192,132,252,0.3);
+    }
+
+    .card h3, .skill h3 { margin-bottom: 8px; }
+    .card p, .skill p { font-size: 0.9rem; opacity: 0.8; }
+
+    footer { text-align: center; padding: 40px; opacity: 0.5; }
   </style>
 </head>
 <body>
@@ -96,66 +81,68 @@
 <canvas id="stars"></canvas>
 
 <header>
-  <h1>Крутов Илья Юрьевич</h1>
-  <p>Системное администрирование • Бэкенд • Фронтенд • Сетевое администрирование • Встраиваемые системы • Internet of Things • Производство и автоматизация</p>
+  <h1>Ilya Krutov</h1>
+  <p>Системный инженер • Backend-разработчик • Сетевой инженер</p>
 </header>
 
 <section>
-  <h2>Обо мне</h2>
+  <h2>Профиль</h2>
   <p class="about">
-    Системный инженер и разработчик, специализирующийся на инфраструктуре, сетях и backend-разработке.
-    Глубоко работаю с Linux, строю отказоустойчивые системы, автоматизирую процессы и интегрирую различные технологии.
+    Системный инженер и разработчик с практическим опытом построения, эксплуатации и оптимизации инфраструктуры.
+    Работаю на стыке backend-разработки, сетевых технологий и системного администрирования: от проектирования архитектуры до внедрения и сопровождения.
+    Основной стек — Linux (systemd, networking, low-level настройка), Python/Flask для сервисов и автоматизации, а также сетевое оборудование (MikroTik, OPNsense).
     
-    Основной интерес — сложные технические системы: сети, безопасность, low-level взаимодействие и архитектура сервисов.
+    Имею опыт настройки и отладки сложных сетей: VLAN, NAT, routing, VPN, RADIUS/Hotspot, сегментация и контроль доступа.
+    Занимаюсь автоматизацией инфраструктуры — скрипты, деплой, интеграции через API (включая Telegram-боты и внешние сервисы).
+    
+    Работал с embedded и IoT-направлением: взаимодействие с оборудованием (Arduino, GPS), обработка данных, интеграция с серверной частью.
+    Понимаю полный цикл: от железа и протоколов до backend-логики и пользовательских интерфейсов.
+    
+    Фокус — отказоустойчивость, безопасность и предсказуемость систем.
+    Умею диагностировать сложные проблемы (сеть, ОС, сервисы), быстро находить узкие места и выстраивать стабильную архитектуру под нагрузку.
   </p>
 </section>
 
 <section>
-  <h2>Проекты</h2>
+  <h2>Опыт / Проекты</h2>
   <div class="projects">
 
-    <div class="card"><h3>Linux Automation</h3><p>Автоматизация установки и конфигурации систем, init-скрипты, автодеплой окружения.</p></div>
+    <div class="card"><h3>Linux Automation</h3><p>Автоматизация развертывания систем, настройка init/systemd, снижение времени установки.</p></div>
 
-    <div class="card"><h3>Raspberry Pi Systems</h3><p>Создание автономных систем с автозапуском, мониторингом и управлением.</p></div>
+    <div class="card"><h3>Network Infrastructure</h3><p>Настройка VLAN, NAT, firewall, маршрутизации. Диагностика сетевых проблем.</p></div>
 
-    <div class="card"><h3>Network Infrastructure</h3><p>Проектирование и настройка сложных сетей, VLAN, firewall, multi-network routing.</p></div>
+    <div class="card"><h3>MikroTik + RADIUS</h3><p>Реализация hotspot-авторизации, интеграция с RADIUS, управление доступом.</p></div>
 
-    <div class="card"><h3>MikroTik Hotspot</h3><p>Hotspot с авторизацией через RADIUS, кастомизация UI и обработка ошибок.</p></div>
+    <div class="card"><h3>Backend (Flask)</h3><p>Разработка API, интеграция сервисов, управление устройствами.</p></div>
 
-    <div class="card"><h3>RADIUS Server</h3><p>Развёртывание FreeRADIUS + Daloradius, управление пользователями и доступами.</p></div>
+    <div class="card"><h3>Telegram Bot</h3><p>Автоматизация управления серверами и мониторинга через бота.</p></div>
 
-    <div class="card"><h3>Telegram Bot System</h3><p>Инфраструктурный бот для управления серверами, API и интеграций.</p></div>
+    <div class="card"><h3>GPS Tracking</h3><p>Сбор и обработка координат, интеграция с серверной частью.</p></div>
 
-    <div class="card"><h3>Flask Backend</h3><p>API серверы, интеграции, управление устройствами и веб-интерфейсы.</p></div>
+    <div class="card"><h3>VPN / VLESS</h3><p>Развертывание защищенных соединений и прокси-инфраструктуры.</p></div>
 
-    <div class="card"><h3>GPS Tracking</h3><p>Система трекинга на базе AT6558 с передачей и обработкой координат.</p></div>
+    <div class="card"><h3>Cloudflare API</h3><p>Автоматизация DNS и сетевых операций.</p></div>
 
-    <div class="card"><h3>VPN / VLESS</h3><p>Построение защищённых каналов связи и обход сетевых ограничений.</p></div>
-
-    <div class="card"><h3>Cloudflare Automation</h3><p>Автоматизация DNS и сетевых процессов через API.</p></div>
-
-    <div class="card"><h3>SDR / HackRF</h3><p>Эксперименты с радиосвязью, анализ сигналов и попытки построения сети.</p></div>
-
-    <div class="card"><h3>Local Messenger</h3><p>Клиент-серверное приложение с real-time обменом данными.</p></div>
+    <div class="card"><h3>SDR / HackRF</h3><p>Анализ радиосигналов, эксперименты с беспроводной связью.</p></div>
 
   </div>
 </section>
 
 <section>
-  <h2>Резюме / Навыки</h2>
+  <h2>Навыки</h2>
   <div class="skills">
 
-    <div class="skill"><h3>Системное администрирование</h3><p>Linux, systemd, диагностика, оптимизация, деплой.</p></div>
+    <div class="skill"><h3>Системное администрирование</h3><p>Linux, systemd, диагностика, оптимизация систем.</p></div>
 
-    <div class="skill"><h3>Сети</h3><p>MikroTik, OPNsense, VLAN, NAT, VPN, routing.</p></div>
+    <div class="skill"><h3>Сети</h3><p>MikroTik, OPNsense, VLAN, routing, VPN.</p></div>
 
-    <div class="skill"><h3>Backend</h3><p>Python, Flask, API, интеграции, Telegram.</p></div>
+    <div class="skill"><h3>Backend</h3><p>Python, Flask, REST API, интеграции.</p></div>
 
-    <div class="skill"><h3>Безопасность</h3><p>VPN, прокси, контроль доступа, изоляция сетей.</p></div>
+    <div class="skill"><h3>Безопасность</h3><p>VPN, прокси, сегментация, контроль доступа.</p></div>
 
-    <div class="skill"><h3>Embedded</h3><p>Arduino, GPS, UART, работа с железом.</p></div>
+    <div class="skill"><h3>Embedded / IoT</h3><p>Arduino, GPS, работа с устройствами.</p></div>
 
-    <div class="skill"><h3>DevOps</h3><p>Автоматизация, скрипты, CI/CD подходы.</p></div>
+    <div class="skill"><h3>DevOps</h3><p>Автоматизация, скрипты, деплой.</p></div>
 
   </div>
 </section>
