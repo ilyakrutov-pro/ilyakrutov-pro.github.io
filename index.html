@@ -3,24 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ilya Krutov — Portfolio</title>
+  <title>Ilya Krutov — Резюме</title>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Arial, sans-serif;
-      background: radial-gradient(circle at center, #0b0f2a, #000);
+      background: radial-gradient(circle at center, #140021, #000);
       color: white;
       overflow-x: hidden;
     }
 
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
+    canvas { position: fixed; top: 0; left: 0; z-index: -1; }
 
     header {
       text-align: center;
@@ -30,23 +25,16 @@
       transition: 1s;
     }
 
-    header.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    header.visible { opacity: 1; transform: translateY(0); }
 
     header h1 {
       font-size: 3.5rem;
-      background: linear-gradient(90deg, #00d4ff, #a855f7);
+      background: linear-gradient(90deg, #c084fc, #7c3aed);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    header p {
-      margin-top: 15px;
-      opacity: 0.7;
-      font-size: 1.2rem;
-    }
+    header p { margin-top: 15px; opacity: 0.7; font-size: 1.2rem; }
 
     section {
       padding: 80px 20px;
@@ -57,20 +45,11 @@
       transition: 1s;
     }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    section.visible { opacity: 1; transform: translateY(0); }
 
-    h2 {
-      margin-bottom: 30px;
-      font-size: 2rem;
-    }
+    h2 { margin-bottom: 30px; font-size: 2rem; color: #c084fc; }
 
-    .about {
-      line-height: 1.7;
-      opacity: 0.8;
-    }
+    .about { line-height: 1.7; opacity: 0.85; }
 
     .projects {
       display: grid;
@@ -80,92 +59,103 @@
 
     .card {
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(192,132,252,0.2);
       border-radius: 20px;
       padding: 20px;
       backdrop-filter: blur(12px);
       transition: 0.4s;
-      cursor: pointer;
     }
 
     .card:hover {
       transform: translateY(-12px) scale(1.03);
-      border-color: #00d4ff;
-      box-shadow: 0 0 25px rgba(0,212,255,0.2);
+      border-color: #c084fc;
+      box-shadow: 0 0 30px rgba(192,132,252,0.4);
     }
 
     .card h3 { margin-bottom: 10px; }
-    .card p { opacity: 0.7; font-size: 0.95rem; }
+    .card p { opacity: 0.75; font-size: 0.95rem; }
 
-    footer {
-      text-align: center;
-      padding: 50px;
-      opacity: 0.5;
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
+
+    .skill {
+      background: rgba(255,255,255,0.05);
+      padding: 15px;
+      border-radius: 15px;
+      border: 1px solid rgba(192,132,252,0.2);
+    }
+
+    footer { text-align: center; padding: 50px; opacity: 0.5; }
   </style>
 </head>
 <body>
 
 <canvas id="stars"></canvas>
 
-<header id="hero">
-  <h1>Ilya Krutov</h1>
-  <p>Fullstack • Networking • Embedded • Systems Engineering</p>
+<header>
+  <h1>Крутов Илья Юрьевич</h1>
+  <p>Системное администрирование • Бэкенд • Фронтенд • Сетевое администрирование • Встраиваемые системы • Internet of Things • Производство и автоматизация</p>
 </header>
 
-<section id="about">
+<section>
   <h2>Обо мне</h2>
   <p class="about">
-    Я занимаюсь разработкой и системной инженерией: от backend и сетевой инфраструктуры до embedded-устройств.
-    Работаю с Linux на глубоком уровне, настраиваю сети (MikroTik, OPNsense, VPN, RADIUS), создаю клиент-серверные системы и автоматизирую процессы.
+    Системный инженер и разработчик, специализирующийся на инфраструктуре, сетях и backend-разработке.
+    Глубоко работаю с Linux, строю отказоустойчивые системы, автоматизирую процессы и интегрирую различные технологии.
     
-    Мне интересно строить сложные системы: от локальных мессенджеров и серверных решений до экспериментов с SDR и собственной связью.
+    Основной интерес — сложные технические системы: сети, безопасность, low-level взаимодействие и архитектура сервисов.
   </p>
 </section>
 
-<section id="projects">
+<section>
   <h2>Проекты</h2>
   <div class="projects">
 
-    <div class="card">
-      <h3>Автоматизация котельной</h3>
-      <p>Комплексный дипломный проект: разработка системы управления промышленной котельной с учетом безопасности, расчётов нагрузок и экономической эффективности.</p>
-    </div>
+    <div class="card"><h3>Linux Automation</h3><p>Автоматизация установки и конфигурации систем, init-скрипты, автодеплой окружения.</p></div>
 
-    <div class="card">
-      <h3>Кастомные Linux-образы</h3>
-      <p>Создание кастомных образов Arch Linux и Raspberry Pi OS с авторазворачиванием, авторасширением файловой системы и преднастроенными сервисами.</p>
-    </div>
+    <div class="card"><h3>Raspberry Pi Systems</h3><p>Создание автономных систем с автозапуском, мониторингом и управлением.</p></div>
 
-    <div class="card">
-      <h3>Telegram Bot + Backend</h3>
-      <p>Интеграция aiogram-бота в Flask-сервер для управления инфраструктурой, мониторинга и взаимодействия с устройствами (Arduino).</p>
-    </div>
+    <div class="card"><h3>Network Infrastructure</h3><p>Проектирование и настройка сложных сетей, VLAN, firewall, multi-network routing.</p></div>
 
-    <div class="card">
-      <h3>Сетевые архитектуры</h3>
-      <p>Настройка сложных сетей: MikroTik, OPNsense, PPPoE, VPN, RADIUS, hotspot авторизация и сегментация сетей.</p>
-    </div>
+    <div class="card"><h3>MikroTik Hotspot</h3><p>Hotspot с авторизацией через RADIUS, кастомизация UI и обработка ошибок.</p></div>
 
-    <div class="card">
-      <h3>Локальный мессенджер</h3>
-      <p>Клиент-серверное приложение с веб-интерфейсом управления и полноэкранным отображением данных.</p>
-    </div>
+    <div class="card"><h3>RADIUS Server</h3><p>Развёртывание FreeRADIUS + Daloradius, управление пользователями и доступами.</p></div>
 
-    <div class="card">
-      <h3>GPS Tracker (AT6558)</h3>
-      <p>Разработка системы отслеживания с использованием GPS-модуля, обработкой координат и передачей данных на сервер.</p>
-    </div>
+    <div class="card"><h3>Telegram Bot System</h3><p>Инфраструктурный бот для управления серверами, API и интеграций.</p></div>
 
-    <div class="card">
-      <h3>VLESS / VPN</h3>
-      <p>Развёртывание защищённых соединений, прокси-инфраструктуры и обхода сетевых ограничений.</p>
-    </div>
+    <div class="card"><h3>Flask Backend</h3><p>API серверы, интеграции, управление устройствами и веб-интерфейсы.</p></div>
 
-    <div class="card">
-      <h3>SDR / HackRF</h3>
-      <p>Эксперименты с радиосвязью и попытки построения собственной сотовой сети на базе SDR.</p>
-    </div>
+    <div class="card"><h3>GPS Tracking</h3><p>Система трекинга на базе AT6558 с передачей и обработкой координат.</p></div>
+
+    <div class="card"><h3>VPN / VLESS</h3><p>Построение защищённых каналов связи и обход сетевых ограничений.</p></div>
+
+    <div class="card"><h3>Cloudflare Automation</h3><p>Автоматизация DNS и сетевых процессов через API.</p></div>
+
+    <div class="card"><h3>SDR / HackRF</h3><p>Эксперименты с радиосвязью, анализ сигналов и попытки построения сети.</p></div>
+
+    <div class="card"><h3>Local Messenger</h3><p>Клиент-серверное приложение с real-time обменом данными.</p></div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Резюме / Навыки</h2>
+  <div class="skills">
+
+    <div class="skill"><h3>Системное администрирование</h3><p>Linux, systemd, диагностика, оптимизация, деплой.</p></div>
+
+    <div class="skill"><h3>Сети</h3><p>MikroTik, OPNsense, VLAN, NAT, VPN, routing.</p></div>
+
+    <div class="skill"><h3>Backend</h3><p>Python, Flask, API, интеграции, Telegram.</p></div>
+
+    <div class="skill"><h3>Безопасность</h3><p>VPN, прокси, контроль доступа, изоляция сетей.</p></div>
+
+    <div class="skill"><h3>Embedded</h3><p>Arduino, GPS, UART, работа с железом.</p></div>
+
+    <div class="skill"><h3>DevOps</h3><p>Автоматизация, скрипты, CI/CD подходы.</p></div>
 
   </div>
 </section>
@@ -175,7 +165,6 @@
 </footer>
 
 <script>
-  // ===== Stars background =====
   const canvas = document.getElementById("stars");
   const ctx = canvas.getContext("2d");
 
@@ -186,28 +175,19 @@
   resize();
 
   let stars = [];
-  for (let i = 0; i < 200; i++) {
-    stars.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.5,
-      s: Math.random() * 0.5
-    });
+  for (let i = 0; i < 250; i++) {
+    stars.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*1.5, s: Math.random()*0.6 });
   }
 
   function animateStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    stars.forEach(star => {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    stars.forEach(star=>{
       ctx.beginPath();
-      ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-      ctx.fillStyle = "white";
+      ctx.arc(star.x,star.y,star.r,0,Math.PI*2);
+      ctx.fillStyle="white";
       ctx.fill();
-
-      star.y += star.s;
-      if (star.y > canvas.height) {
-        star.y = 0;
-        star.x = Math.random() * canvas.width;
-      }
+      star.y+=star.s;
+      if(star.y>canvas.height){ star.y=0; star.x=Math.random()*canvas.width; }
     });
     requestAnimationFrame(animateStars);
   }
@@ -215,16 +195,13 @@
 
   window.addEventListener("resize", resize);
 
-  // ===== Scroll animations =====
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.classList.add("visible"); }
     });
   }, { threshold: 0.2 });
 
-  document.querySelectorAll("section, header").forEach(el => observer.observe(el));
+  document.querySelectorAll("section, header").forEach(el=>observer.observe(el));
 </script>
 
 </body>
